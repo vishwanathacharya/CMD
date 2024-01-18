@@ -23,7 +23,7 @@ sudo -i
 - `-i`: Ye option sudo ke saath istemal hoti hai aur ise "login shell" ke taur par execute karne ke liye kahte hain. Jab aap `-i` option ke saath `sudo` ka istemal karte hain, toh aap root user ke login shell mein switch ho jaate hain. Iska matlab hai ki aap root user ke taur par kaam karne ke liye ek naya shell start kar rahe hain.
 Jab aap `sudo -i` likhkar enter karte hain, toh aap temporary taur par root user ban jaate hain aur root user ke taur par ek naya shell start hota hai. Is shell mein aap root ke permissions ke saath commands run kar sakte hain.
 Dhyan rahe ki `sudo -i` ka istemal hoshiyari se karna chahiye, kyun ki root user ke permissions ke saath kaam karna system ke security ko kamzor kar sakta hai. Root access sirf jab zarurat ho tab hi istemal karna chahiye.//
-##################################################################################################################
+#################################################################################################################
 
 
 usermod -aG $groupname $username
@@ -42,7 +42,7 @@ sudo usermod -aG developers john
 ```
 Yahan `sudo` ka istemal kyun kiya gaya hai, isliye ki group mein kisi ko add karte waqt administrative permissions ki zarurat hoti hai.
 Dhyan rahe ki changes ko apply karne ke liye aapko user ko logout aur fir login karna padega ya phir `su - $username` command ka istemal karke ek naye shell start karna padega.//
-####################################################################################################################
+###################################################################################################################
 
 
 
