@@ -125,10 +125,15 @@ awk '{print $1}' /var/log/nginx/odoo.access.log | sort | uniq -c | sort -nr
 grep "$(date +'%d/%b/%Y')" /var/log/nginx/odoo.access.log  | awk '{print $1}' | sort -u | wc -l
 
 
+
+
+#################################################################################################################
 sudo curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 docker-compose --version
 
+
+#################################################################################################################
 
 
 
@@ -1040,3 +1045,26 @@ aws iam list-users
 #################################################################################################################################################################
 #ssh issue
 PubkeyAcceptedAlgorithms +ssh-rsa
+
+
+
+###########################################################################################
+#elasicsearch installation command
+
+wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-8.11.4-amd64.deb
+dpkg -i elasticsearch-8.11.4-amd64.deb
+systemctl start elasticsearch
+systemctl enable elasticsearch
+systemctl status elasticsearch
+nano /etc/elasticsearch/elasticsearch.yml
+xpack.security.enabled: false {Here, bydefault is true, make it false.}
+systemctl restart elasticsearch
+curl -XGET http://localhost:9200
+curl -XGET http://publicip:9200
+curl -XGET http://privateip:9200
+curl -XGET http://127.0.0.1:9200
+curl -XGET http://0.0.0.0:9200
+
+
+##########################################################################################
+
