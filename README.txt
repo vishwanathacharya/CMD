@@ -88,6 +88,18 @@ awk '{print $1}' /var/log/odoo/odoo-server.log | sort -u | wc -l
 awk '{print $1}' /var/log/nginx/odoo.access.log | sort -u | wc -l
 awk '{print $1}' /path/to/nginx/access.log | sort -u | wc -l
 awk '{print $1}' /path/to/access.log | sort -u | wc -l
+
+
+
+//Ye command Linux me use hoti hai. Niche diye gaye hai is command ke kuch parts:
+- `awk '{print $1}' /var/log/odoo/odoo-server.log`: Yeh command `/var/log/odoo/odoo-server.log` file se har line ki pehli field ko print karega.
+- `sort -u`: Yeh command input ko sort karega aur duplicate lines ko remove karega, sirf unique lines ko output dega.
+- `wc -l`: Yeh command lines ki count karega.
+Is puri command ka matlab hai, `/var/log/odoo/odoo-server.log` file se pehle field ko nikal kar use sort karega aur phir unqiue lines ki count dega.//
+##################################################################3
+
+
+
 grep "your_date" /path/to/access.log | awk '{print $1}' | sort -u | wc -l
 grep "$(date +'%d/%b/%Y')" /path/to/access.log | awk '{print $1}' | sort -u | wc -l
 grep "$(date +'%d/%b/%Y')" /var/log/nginx/odoo.access.log  | awk '{print $1}' | sort -u | wc -l
