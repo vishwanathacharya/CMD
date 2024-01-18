@@ -80,7 +80,7 @@ Example output:
 ```
 Yahan "1234," "5678," "9012" aise PIDs hain jo user `vishwanath.acharya` ke dwara chalaye gaye hain.
 Dhyan rahe ki yeh sirf PIDs ko dikhaata hai, actual process information ke liye aap `ps` command ka istemal kar sakte hain.//
-####################################################################################################################
+#################################################################################################################
 
 
 
@@ -96,11 +96,25 @@ awk '{print $1}' /path/to/access.log | sort -u | wc -l
 - `sort -u`: Yeh command input ko sort karega aur duplicate lines ko remove karega, sirf unique lines ko output dega.
 - `wc -l`: Yeh command lines ki count karega.
 Is puri command ka matlab hai, `/var/log/odoo/odoo-server.log` file se pehle field ko nikal kar use sort karega aur phir unqiue lines ki count dega.//
-##################################################################3
+##################################################################################################################
 
 
 
 grep "your_date" /path/to/access.log | awk '{print $1}' | sort -u | wc -l
+grep '2024-01-18' /path/to/access.log | awk '{print $1}' | sort -u | wc -l
+
+//The command "grep 'your_date' /path/to/access.log | awk '{print $1}' | sort -u | wc -l" is a Unix command that is used to perform the following operations:
+1. **grep 'your_date' /path/to/access.log**: This part of the command searches for the specified date ('your_date') in the '/path/to/access.log' file and displays the lines containing the date.
+2. **awk '{print $1}'**: It extracts the first column from the output of the grep command. In this context, it might be used to extract IP addresses or specific data from the log file.
+3. **sort -u**: It sorts the output of the previous command and removes any duplicate lines, displaying only unique lines.
+4. **wc -l**: It counts the number of lines in the output.
+So, the entire command is essentially counting the number of unique occurrences of the first field (such as IP addresses) in the log file that contain the specified date.
+Please note that "your_date" and "/path/to/access.log" are placeholders and should be replaced with actual values.//
+################################################################################################################
+
+
+
+
 grep "$(date +'%d/%b/%Y')" /path/to/access.log | awk '{print $1}' | sort -u | wc -l
 grep "$(date +'%d/%b/%Y')" /var/log/nginx/odoo.access.log  | awk '{print $1}' | sort -u | wc -l
 awk '{print $1}' /path/to/access.log | sort -u | wc -l
