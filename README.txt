@@ -26,25 +26,49 @@ Dhyan rahe ki `sudo -i` ka istemal hoshiyari se karna chahiye, kyun ki root user
 ##################################################################################################################
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 usermod -aG $groupname $username
+
+
+//`usermod -aG $groupname $username` ek Linux/Unix command hai, jise user ko ek ya multiple groups mein add karne ke liye istemal kiya jata hai. Yahan ek vyakhya di gayi hai:
+- `usermod`: Ye command user ke attributes ko modify karne ke liye hota hai. Isse user ko existing groups mein add kiya ja sakta hai.
+- `-aG`: Ye options `usermod` ke saath istemal hote hain. 
+  - `-a`: Is option ka istemal user ko ek naye group mein add karne ke liye hota hai.
+  - `-G`: Is option se specify kiya jata hai ki kaun se groups mein user ko add karna hai.
+- `$groupname`: Is jagah aapko us group ka naam dena hoga jisme aap user ko add karna chahte hain. 
+- `$username`: Is jagah aapko us user ka naam dena hoga jise aap specified group mein add karna chahte hain.
+Jaise ki agar aapko user "john" ko group "developers" mein add karna hai, toh aap is tarah se command likhenge:
+```bash
+sudo usermod -aG developers john
+```
+Yahan `sudo` ka istemal kyun kiya gaya hai, isliye ki group mein kisi ko add karte waqt administrative permissions ki zarurat hoti hai.
+Dhyan rahe ki changes ko apply karne ke liye aapko user ko logout aur fir login karna padega ya phir `su - $username` command ka istemal karke ek naye shell start karna padega.//
+####################################################################################################################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ps -p 6093 u
 
