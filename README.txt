@@ -2,7 +2,7 @@
 
 This repository is dedicated to storing useful Linux commands that I frequently use. It serves as a reference for myself and potentially others who are interested in Linux command-line operations.
 
-1. **Command 1:**
+**Command**
 #################################################################################################################
 sudo su
 
@@ -60,32 +60,27 @@ USER       PID  %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
 username  6093  0.0  0.5 123456 7890 ?        S    Jan01   0:00 /path/to/your/process
 ```
 Yahan "username" aapke process ko run karne wale user ka naam hai aur "6093" us process ka PID hai. "COMMAND" column mein aapko process ka naam aur arguments dikhega.//
-#######################################################################################################################
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+####################################################################################################################
 
 
 pgrep -u vishwanath.acharya
+
+
+
+//`pgrep -u vishwanath.acharya` ek Linux/Unix command hai jo ek user ke dwara chalaye gaye processes ke IDs (PIDs) ko display karta hai. Yahan ek vyakhya di gayi hai:
+- `pgrep`: Ye command process IDs (PIDs) ko dhoondhne ke liye istemal hota hai. Isse kisi specific criteria ke mutabiq processes ko dhoondha ja sakta hai.
+- `-u`: Is option se user ko specify kiya jata hai jiske chalaye gaye processes ki IDs dhoondhi ja rahi hain.
+- `vishwanath.acharya`: Yahan aapko user ka naam dena hota hai jiska chalaye gaye processes ki IDs dhoondhni hain.
+Jab aap `pgrep -u vishwanath.acharya` likhkar enter karte hain, toh ye command aapko user `vishwanath.acharya` ke dwara chalaye gaye processes ke PIDs ko display karegi.
+Example output:
+```
+1234
+5678
+9012
+```
+Yahan "1234," "5678," "9012" aise PIDs hain jo user `vishwanath.acharya` ke dwara chalaye gaye hain.
+Dhyan rahe ki yeh sirf PIDs ko dikhaata hai, actual process information ke liye aap `ps` command ka istemal kar sakte hain.//
+####################################################################################################################
 
 
 
