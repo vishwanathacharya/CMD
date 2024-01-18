@@ -46,31 +46,44 @@ Dhyan rahe ki changes ko apply karne ke liye aapko user ko logout aur fir login 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ps -p 6093 u
+
+//`ps -p 6093 u` ek Linux/Unix command hai jo ek specific process ki information ko display karne ke liye istemal hoti hai. Yahan ek vyakhya di gayi hai:
+- `ps`: Ye command running processes ki information ko dekhne ke liye istemal hota hai. "ps" ka matlab hai "process status."
+- `-p`: Is option ka istemal process ID (PID) specify karne ke liye hota hai. Yahan `6093` PID hai.
+- `6093`: Ye ek example PID hai. Actual PID aapke system par chal rahe processes ke hisab se alag ho sakta hai.
+- `u`: Is option se user-oriented format mein information display hoti hai. Isse aapko process ke user se related details milte hain.
+Jab aap `ps -p 6093 u` likhkar enter karte hain, toh ye command aapko specific PID `6093` ke process ke baare mein information provide karegi. Isme aapko user, PID, %CPU, %MEM, VSZ (virtual memory size), RSS (resident set size), TTY (controlling terminal), STAT (process status), START (start time), TIME (cumulative CPU time), and COMMAND (command name/arguments) jaise details mil sakti hain.
+Example output:
+```
+USER       PID  %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+username  6093  0.0  0.5 123456 7890 ?        S    Jan01   0:00 /path/to/your/process
+```
+Yahan "username" aapke process ko run karne wale user ka naam hai aur "6093" us process ka PID hai. "COMMAND" column mein aapko process ka naam aur arguments dikhega.//
+#######################################################################################################################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 pgrep -u vishwanath.acharya
 
