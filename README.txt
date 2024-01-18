@@ -17,6 +17,33 @@ Dhyan rahe ki root user ke permissions ke sath kaam karna risk yukt ho sakta hai
 
 sudo -i
 
+
+//`sudo -i` bhi ek Linux/Unix command hai, jo `sudo` ke saath istemal hoti hai. Ye command sudo ke madhyam se root user (superuser) banane ke liye istemal hoti hai. Yahan ek vyakhya di gayi hai:
+- `sudo`: Iska matlab hai "superuser do". Ye command normal users ko temporary taur par superuser (root) ke permissions ke saath kisi command ko run karne ki anumati deta hai.
+- `-i`: Ye option sudo ke saath istemal hoti hai aur ise "login shell" ke taur par execute karne ke liye kahte hain. Jab aap `-i` option ke saath `sudo` ka istemal karte hain, toh aap root user ke login shell mein switch ho jaate hain. Iska matlab hai ki aap root user ke taur par kaam karne ke liye ek naya shell start kar rahe hain.
+Jab aap `sudo -i` likhkar enter karte hain, toh aap temporary taur par root user ban jaate hain aur root user ke taur par ek naya shell start hota hai. Is shell mein aap root ke permissions ke saath commands run kar sakte hain.
+Dhyan rahe ki `sudo -i` ka istemal hoshiyari se karna chahiye, kyun ki root user ke permissions ke saath kaam karna system ke security ko kamzor kar sakta hai. Root access sirf jab zarurat ho tab hi istemal karna chahiye.//
+##################################################################################################################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 usermod -aG $groupname $username
 
 ps -p 6093 u
