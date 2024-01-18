@@ -5,12 +5,25 @@ This repository is dedicated to storing useful Linux commands that I frequently 
 1. **Command 1:**
 #################################################################################################################
 sudo su
+//`sudo su` ek Linux/Unix command hai jo superuser (root) ke taur par kisi user ko switch karne ke liye istemal hoti hai.
+
+`sudo`: Ye command root ke level tak access dene ke liye hota hai. "sudo" ka matlab hai "superuser do". Jab aap kisi command ke pehle "sudo" likhte hain, toh wo command superuser (root) ke permissions ke sath execute hoti hai.
+
+`su`: "su" ka matlab hai "switch user". Iska istemal kisi aur user ke roop mein switch karne ke liye hota hai.
+
+Jab aap `sudo su` likhkar enter karte hain, toh aap apne current user ko root user ke taur par switch kar lete hain. Iske baad, aapko root ke permissions mil jate hain aur aap system par koi bhi command run kar sakte hain, jo normal user ke liye allowed nahi hoti. 
+
+Dhyan rahe ki root user ke permissions ke sath kaam karna risk yukt ho sakta hai, isliye iska istemal hoshiyari se karna chahiye. Aapko root access sirf jab zarurat ho tab hi istemal karna chahiye.//
+##################################################################################################################
+
+
 
 sudo -i
 
 usermod -aG $groupname $username
 
 ps -p 6093 u
+
 pgrep -u vishwanath.acharya
 
 
