@@ -7,6 +7,7 @@ chmod +x ./install
 service codedeploy-agent start
 systemctl enable codedeploy-agent
 systemctl status codedeploy-agent
+dpkg --list | grep codedeploy
 //*chkconfig codedeploy-agent on
 
 # My Linux Commands Repository
