@@ -1,5 +1,12 @@
+#INSTALL CODE DEPLOY AGENT
 apt --fix-broken install
-
+apt-get install -y ruby
+wget https://aws-codedeploy-us-east-1.s3.amazonaws.com/latest/install
+chmod +x ./install
+./install auto
+service codedeploy-agent start
+systemctl enable codedeploy-agent
+systemctl status codedeploy-agent
 
 # My Linux Commands Repository
 
