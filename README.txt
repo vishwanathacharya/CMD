@@ -1,3 +1,6 @@
+grep "/home/magento234/www/thuraa/" /var/log/apache2/access.log | grep "error"
+awk '/error/' /path/to/syslog/file
+
 #Retrieve information about the IAM user who has configured the AWS CLI on a particular machine.
 aws sts get-caller-identity
 
