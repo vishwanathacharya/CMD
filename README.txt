@@ -1,3 +1,9 @@
+#Retrieve information about the IAM user who has configured the AWS CLI on a particular machine.
+aws sts get-caller-identity
+
+
+
+
 #INSTALL CODE DEPLOY AGENT
 apt --fix-broken install
 apt-get install -y ruby
