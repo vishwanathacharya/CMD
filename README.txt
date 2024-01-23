@@ -1,3 +1,7 @@
+bin/magento module:status
+bin/magento module:disable Magento_AdminAdobeImsTwoFactorAuth
+
+
 grep "$(date +"%b %e %H:%M" --date="today 13:28")" /var/log/syslog | awk '$3 >= "013:00:00" && $3 <= "14:00:00"'
 
 grep "/home/magento234/www/thuraa/" /var/log/apache2/access.log | grep "error"
