@@ -1,3 +1,4 @@
+bin/magento module:disable Magento_TwoFactorAuth
 bin/magento module:status
 bin/magento module:disable Magento_AdminAdobeImsTwoFactorAuth
 
