@@ -1,3 +1,6 @@
+sudo find / -type f -name "techyon-server.conf" 2>/dev/null
+
+
 grep "$(date +"%b %e %H:%M" --date="today 15:00:00")" /var/log/syslog | awk '$3 >= "15:00:00" && $3 <= "15:59:00"'
 grep "$(date +"%b %e %H:%M" --date="today 14:50:00")" /var/log/syslog | awk '$3 >= "14:50:00" && $3 <= "14:59:00"'
 grep "$(date +"%b %e %H:%M" --date="today 14:30:00")" /var/log/syslog | awk '$3 >= "14:30:00" && $3 <= "14:59:00"'
