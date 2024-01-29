@@ -1111,5 +1111,58 @@ curl -XGET http://127.0.0.1:9200
 curl -XGET http://0.0.0.0:9200
 
 
+
+
+import boto3
+import json
+import xmlrpc.client
+import os
+import sys
+
+def send_notification(log_event_message):
+    uname = 'admin'
+    pwd = 'password'
+    dbname = 'db'
+    url = "http://test.domain.com/xmlrpc"
+
+    socket_common = xmlrpc.client.ServerProxy("{0}/common".format(url))
+    uid_check = socket_common.login(dbname, uname, pwd)
+    socket = xmlrpc.client.ServerProxy("{0}/object".format(url))
+
+    message = f"Please checke below slow query details \n{log_event_message}"
+    alarm = "alarm1"
+
+    try:
+        response = socket.execute(dbname, uid_check, pwd, 'fcm.notifications', 'send_server_alarm_notifications', 'test-mohit', alarm, message)
+        print(response)
+    except Exception as e:
+        error = "Error: %s" % str(e)
+        print(error)
+        sys.exit(0)
+
+def lambda_handler(event, context):
+    log_group_name = "/aws/rds/instance/mohitdb/slowquery"
+    sns_topic_arn = "arn:aws:sns:eu-north-1:556612399991:slow-query-topic"
+
+    client = boto3.client('logs')
+    response = client.describe_log_streams(logGroupName=log_group_name, orderBy='LastEventTime', descending=True, limit=1)
+
+    if 'logStreams' in response and len(response['logStreams']) > 0:
+        latest_log_stream = response['logStreams'][0]['logStreamName']
+
+        # Check if there are new log events
+        events_response = client.get_log_events(logGroupName=log_group_name, logStreamName=latest_log_stream, limit=1)
+
+        if 'events' in events_response and len(events_response['events']) > 0:
+            #latest_event_timestamp = events_response['events'][0]['timestamp']
+            log_event_message = events_response['events'][0]['message']
+
+            # Send SNS notification with log details
+            sns_client = boto3.client('sns')
+            sns_client.publish(TopicArn=sns_topic_arn, Subject="New Slow Query Log Event", Message=f"Please checke below slow query details \n{log_event_message}")
+            send_notification(log_event_message)
+
+
+
 ##########################################################################################
 
