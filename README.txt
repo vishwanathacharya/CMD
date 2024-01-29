@@ -1,3 +1,7 @@
+zip -r filename.zip filename/
+
+
+
 du -sh fileorfoldername.zip
 
 
