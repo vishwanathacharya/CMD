@@ -1,3 +1,6 @@
+du -sh fileorfoldername.zip
+
+
 sudo find / -type f -name "techyon-server.conf" 2>/dev/null
 
 
