@@ -1166,3 +1166,7 @@ def lambda_handler(event, context):
 
 ##########################################################################################
 
+sudo growpart /dev/nvme0n1 1
+sudo resize2fs /dev/root
+https://medium.com/@m.yunan.helmy/increase-the-size-of-ebs-volume-in-your-ec2-instance-3859e4be6cb7
+
