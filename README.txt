@@ -1,3 +1,13 @@
+ls -l /usr/bin/python*
+ls -l /usr/bin/python* | grep -oP 'python\d\.\d'
+python3 --version
+
+
+
+
+
+
+
 zip -r filename.zip filename/
 
 
