@@ -1,3 +1,8 @@
+ps -ef | grep odoo
+ps -aux | grep odoo
+
+
+
 ls -l /usr/bin/python*
 ls -l /usr/bin/python* | grep -oP 'python\d\.\d'
 python3 --version
