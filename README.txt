@@ -1,3 +1,5 @@
+pip install cssselect
+
 docker info
 
 ps -ef | grep odoo
