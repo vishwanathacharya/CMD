@@ -1,3 +1,5 @@
+docker info
+
 ps -ef | grep odoo
 ps -aux | grep odoo
 
