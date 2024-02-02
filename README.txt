@@ -1,3 +1,6 @@
+grep -r "text_which_you_find_with_in_file" filename
+
+
 pip install cssselect
 
 docker info
