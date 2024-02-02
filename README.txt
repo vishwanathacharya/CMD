@@ -1,3 +1,13 @@
+find / -name "filename"
+find / -type f -name "*.extension"
+find /path/to/search -mtime -N  (N=no of days file you find which has modified)
+find /path/to/search -mtime +N
+find /path/to/search -size +10M
+find /path/to/search -name "filename" -type f -mtime -7
+find /path/to/search -iname "filename"
+
+
+
 grep -r "text_which_you_find_with_in_file" filename
 
 
