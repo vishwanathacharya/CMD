@@ -1,3 +1,6 @@
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys B7B3B788A8D3785C
+
+
 find / -name "filename"
 find / -type f -name "*.extension"
 find /path/to/search -mtime -N  (N=no of days file you find which has modified)
