@@ -12,6 +12,7 @@ find /path/to/search -iname "filename"
 
 
 grep -r "text_which_you_find_with_in_file" filename
+grep -r "testcscart.webkul.in" /etc/apache2/sites-enabled/*.conf
 
 
 pip install cssselect
