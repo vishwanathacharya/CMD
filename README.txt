@@ -1,3 +1,69 @@
+
+UPDATE `wk_core_config_data`
+SET `value` = 'localhost'
+WHERE `path` = 'catalog/search/opensearch_server_hostname';
+
+UPDATE `wk_core_config_data`
+    -> SET `value` = 'localhost'
+    -> WHERE `path` = 'catalog/search/elasticsearch7_server_hostname';
+
+SELECT * FROM 'wk_core_config_data' WHERE path LIKE '%catalog/search/%';
+
+
+UPDATE wk_core_config_data SET value = 'http://demo.abusaxiy.uz/' WHERE path = 'web/unsecure/base_url';
+UPDATE core_config_data SET value = 'http://example.com/' WHERE path = 'web/unsecure/base_url';
+
+SELECT value FROM wk_core_config_data path = 'web/unsecure/base_url';
+SELECT value FROM wk_core_config_data path = 'web/secure/base_url';
+
+
+SELECT * FROM core_config_data WHERE path IN ('web/unsecure/base_static_url', 'web/secure/base_static_url', 'web/unsecure/base_media_url', 'web/secure/base_media_url');
+
+
+
+UPDATE core_config_data SET value = 'https://demo.abusaxiy.uz/' WHERE path = 'web/unsecure/base_url' OR path = 'web/secure/base_url';
+
+
+
+
+
+
+
+
+
+php bin/magento setup:store-config:set --use-secure-admin=1
+$php bin/magento module:disable Magento_Csp
+$sudo php bin/magento setup:install --base-url=https://testuvdesk.webkul.com/magento-2.4.3/pub
+bin/magento setup:install --base-url=http://3.108.65.100/ --db-host=127.0.0.1 --db-name=db --db-user=root --db-password=password --admin-firstname=admin --admin-lastname=admin --admin-email=admin@gmail.com --admin-user=admin --admin-password=password@1 --language=en_US --currency=USD --timezone=America/Chicago --use-rewrites=1
+hostnamectl
+sudo php bin/magento setup:install --base-url=https://testuvdesk.webkul.com/magento2.4.3/pub
+
+sudo bin/magento setup:install --base-url=http://testuvdesk.webkul.com/magento2.4.3 --db-host=127.0.0.1 --db-name=magento2.4.3 --db-user=root --db-password=evU8Aa#1HA9Y --admin-firstname=Admin --admin-lastname=John --admin-email=komals2712@gmail.com --admin-user=admin --admin-password=admin123 --language=en_US --currency=USD --timezone=America/Chicago --use-rewrites=1 --search-engine=elasticsearch7 --elasticsearch-host=localhost --elasticsearch-port=9200 --elasticsearch-index-prefix=magento2 --elasticsearch-timeout=15
+php bin/magento module:status
+php bin/magento set:up
+php bin/magento deploy:mode:set developer
+
+ composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition:2.4.3
+ php bin/magento module:disable Magento_TwoFactorAuth
+ php bin/magento module:status
+php bin/magento deploy:mode:show
+php bin/magento c:status
+php bin/magento deploy:mode:set production
+php bin/magento indexer:Reindex
+php bin/magento deploy:mode:set default
+php bin/magento setup:di:compile
+php bin/magento setup:static-content:deploy -f
+php bin/magento sampledata:deploy
+
+
+
+bin/magento setup:store-config:set --base-url-secure="https://zillion.vachak.com/"
+php bin/magento conf:show
+sudo bin/magento setup:upgrade
+sudo rm -rf var/generation var/view_preprocessed/ pub/static/frontend
+sudo bin/magento setup:di:compile
+sudo bin/magento setup:static-content:deploy -f
+sudo bin/magento cache:flush
 php bin/magento cache:clean
 rm -rf var/cache/*
 rm -rf var/generation/*
