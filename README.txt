@@ -1,3 +1,8 @@
+php bin/magento cache:clean
+rm -rf var/cache/*
+rm -rf var/generation/*
+
+
 apt-get update sudo apt-get install php8.1-common php8.1-mysql php8.1-xml php8.1-xmlrpc php8.1-curl php8.1-gd php8.1-imagick php8.1-cli php8.1-dev php8.1-imap php8.1-mbstring php8.1-opcache php8.1-soap php8.1-zip
 
 curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
