@@ -1,13 +1,11 @@
+php bin/magento config:show web/unsecure/base_url
+
+
+
 pg_dump -h database-1.cilpa3qtyggj.af-south-1.rds.amazonaws.com -d odoo17 -Fc > odoo17.dump
-
-
 pg_dump -h database-1.cilpa3qtyggj.af-south-1.rds.amazonaws.com -U odoo17 -d odoo17 -Fc > odoo17.dump
-
-
 ab mujhe odoo17.dump ko kisi aur db me ma lo newdb nam ke db me jiska owner odo017 hai ispe restore krni hai kaise kru
-
 pg_restore -h database-1.cilpa3qtyggj.af-south-1.rds.amazonaws.com -U odo017 -d newodoodb -Fc -v odoo17.dump
-
 pg_restore -h database-1.cilpa3qtyggj.af-south-1.rds.amazonaws.com -U odo017 -d newodoodb2 -Fc -v odoo17_2024-02-21_07-11-18.dump
 
 
