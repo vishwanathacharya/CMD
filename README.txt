@@ -1,3 +1,5 @@
+snap remove certbot
+
 php bin/magento config:show web/unsecure/base_url
 
 
