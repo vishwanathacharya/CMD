@@ -1,3 +1,6 @@
+awk '{print $1}' /var/log/apache2/access.log | sort | uniq -c | sort -nr | head -n 1
+
+
 snap remove certbot
 
 php bin/magento config:show web/unsecure/base_url
