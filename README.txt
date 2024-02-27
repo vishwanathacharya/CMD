@@ -1,3 +1,5 @@
+init 0
+
 python3.7 /opt/odoo15/odoo/odoo-bin -c /etc/odoo15-server.conf --logfile=/ &
 
 awk '{print $1}' /var/log/apache2/access.log | sort | uniq -c | sort -nr | head -n 1
