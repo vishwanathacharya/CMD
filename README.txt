@@ -1,3 +1,7 @@
+#odoo_issue
+ls /usr/local/bin/wkhtmltopdf
+cp /usr/local/bin/wkhtmltopdf /usr/bin
+
 init 0
 
 python3.7 /opt/odoo15/odoo/odoo-bin -c /etc/odoo15-server.conf --logfile=/ &
