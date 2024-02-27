@@ -1,6 +1,12 @@
 #odoo_issue
 ls /usr/local/bin/wkhtmltopdf
 cp /usr/local/bin/wkhtmltopdf /usr/bin
+pip cache purge
+pip3 cache purge
+pip show paramiko
+pip3 show paramiko
+
+
 
 init 0
 
