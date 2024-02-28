@@ -1,3 +1,5 @@
+mysqlbinlog mariadb-bin.000038 > plain-text-log38.sql
+
 #odoo_issue
 ls /usr/local/bin/wkhtmltopdf
 cp /usr/local/bin/wkhtmltopdf /usr/bin
