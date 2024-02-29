@@ -1,4 +1,6 @@
- sed -n '/Feb 28 20:00:00/,/Feb 28 22:00:00/p' /var/log/syslog.1
+awk '{print $1}' access_testee-magento234.log.1
+
+sed -n '/Feb 28 20:00:00/,/Feb 28 22:00:00/p' /var/log/syslog.1
 
 
 mysqlbinlog mariadb-bin.000038 > plain-text-log38.sql
