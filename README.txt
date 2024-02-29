@@ -1,3 +1,6 @@
+ sed -n '/Feb 28 20:00:00/,/Feb 28 22:00:00/p' /var/log/syslog.1
+
+
 mysqlbinlog mariadb-bin.000038 > plain-text-log38.sql
 
 #odoo_issue
