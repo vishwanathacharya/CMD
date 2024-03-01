@@ -1,3 +1,7 @@
+create user 'user'@'localhost' identified with mysql_native_password by 'lost';
+CREATE USER 'user'@'localhost' IDENTIFIED BY 'loos';
+grant all on db.* to 'user'@'localhost' with grant option;
+
 SELECT user FROM mysql.user;
 
 awk '{print $1}' access_testee-magento234.log.1
